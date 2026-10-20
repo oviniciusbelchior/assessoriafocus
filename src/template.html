@@ -23,8 +23,8 @@
   --glow:rgba(191,191,191,.25) 0 1px 20px 0;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
-body{background:var(--parchment);color:var(--ink);font:400 16px/1.45 var(--font);-webkit-font-smoothing:antialiased}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:16px}
+body{background:var(--parchment);color:var(--ink);font:400 16px/1.45 var(--font);-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit}
 img{max-width:100%;display:block}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
@@ -68,7 +68,10 @@ h3{font-size:20px;line-height:1.27;letter-spacing:-.04em}
 .pilltag i{width:6px;height:6px;border-radius:50%;background:var(--orange);display:block}
 
 /* hero: ocupa exatamente a primeira tela (84px = menu + margem) */
-:root{--nav-h:0px}
+:root{--nav-h:30px}
+.topbar{height:30px;display:flex;align-items:center;justify-content:center;padding:0 16px;background:#d44a0d;color:#fff;font-size:12.5px;font-weight:600;letter-spacing:-.01em;text-align:center;white-space:nowrap}
+.topbar .m{display:none}
+@media(max-width:600px){.topbar{font-size:12px}.topbar .d{display:none}.topbar .m{display:inline}}
 .hero{min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));padding:0;display:flex;flex-direction:column;text-align:center;position:relative}
 .hero-main{width:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-block:32px 24px}
 .hero h1{max-width:800px;margin:0 auto 20px}
@@ -285,6 +288,8 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 <script>document.documentElement.classList.add('js')</script>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
+
+<div class="topbar" role="note"><span class="d">Exclusivo para empresas que já faturam mais de R$ 25 mil por mês.</span><span class="m">Exclusivo para empresas que faturam +R$ 25 mil/mês</span></div>
 
 <main id="conteudo">
 <section class="hero" id="topo">
@@ -515,7 +520,7 @@ var DEPOIMENTOS = {{TESTIMONIALS}};
 
 (function(){
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var heroSel=['header','.pilltag','.hero h1','.hero .sub','.hero .ctas','.hero .perf','.hero .cue'];
+  var heroSel=['.topbar','.pilltag','.hero h1','.hero .sub','.hero .ctas','.hero .perf','.hero .cue'];
   var heroEls=[];
   heroSel.forEach(function(s,i){var e=document.querySelector(s);if(e){e.setAttribute('data-r','');e.style.setProperty('--d',(0.08+i*0.12)+'s');heroEls.push(e)}});
   var wide=window.matchMedia&&matchMedia('(min-width:860px)').matches;

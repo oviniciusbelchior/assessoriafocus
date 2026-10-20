@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus Performance | Tráfego pago estratégico como alavanca de crescimento</title>
+<meta name="theme-color" content="#faf9f6">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Focus Performance | Tráfego pago estratégico como alavanca de crescimento">
+<meta property="og:description" content="Tráfego pago estratégico como alavanca para o seu negócio, não como custo.">
+<meta name="description" content="Assessoria estratégica de tráfego pago: rastreamento até a venda e meta de no mínimo 5x de ROAS em 90 dias. Mais de 6 anos de mercado e vagas limitadas por semestre.">
+<link rel="icon" href="assets/icone.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#faf9f6; --paper:#ffffff; --linen:#f2f0e9; --ink:#171717; --carbon:#212121;
+  --stone:#6e6e6e; --ash:#878787; --graphite:#414141; --orange:#ee5b16; --orange-deep:#b23d09;
+  --font:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --ring:rgba(110,110,110,.1) 0 0 0 1px,rgba(110,110,110,.2) 0 1px 0 0;
+  --glow:rgba(191,191,191,.25) 0 1px 20px 0;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--parchment);color:var(--ink);font:400 16px/1.45 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:8px;z-index:20}
+.skip:focus{left:8px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{padding:80px 0}
+@media(max-width:600px){section{padding:56px 0}}
+h1 .pt,h2 .pt{color:var(--orange)}
+h1,h2,h3{font-weight:600;color:var(--ink);text-wrap:balance}
+h1{font-size:clamp(40px,7vw,56px);line-height:1.14;letter-spacing:-.06em}
+h2{font-size:clamp(28px,4vw,32px);line-height:1.25;letter-spacing:-.04em}
+h3{font-size:22px;line-height:1.27;letter-spacing:-.04em}
+.sub{font-size:18px;line-height:1.5;color:var(--stone);max-width:560px}
+.head{display:grid;gap:16px;margin-bottom:40px}
+.head h2{max-width:760px}
+.head.center{justify-items:center;text-align:center}
+.head.center .sub{margin-inline:auto}
+.center-t{text-align:center;margin-inline:auto}
+
+/* nav */
+.nav{position:sticky;top:16px;z-index:10;display:flex;justify-content:center;padding:0 16px;pointer-events:none;margin-top:20px;height:48px}
+.pill{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;max-width:760px;background:var(--ink);border-radius:100px;padding:6px 6px 6px 20px;box-shadow:rgba(0,0,0,.18) 0 8px 24px}
+.pill img{height:13px;width:auto}
+.pill ul{list-style:none;padding:0;display:flex;gap:24px}
+.pill ul a{font-size:14px;font-weight:500;color:#d9d9d9;text-decoration:none}
+.pill ul a:hover{color:#fff}
+.pill ul{list-style:none;padding:0;display:flex;gap:2px}
+.pill ul a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;white-space:nowrap;font-size:13px;font-weight:500;color:#d4d4d4;text-decoration:none;border-radius:100px}
+.pill ul a:hover{color:#fff;background:rgba(255,255,255,.08)}
+@media(max-width:820px){.pill ul{display:none}}
+.pill .go{background:var(--orange);color:#fff;font-size:13px;font-weight:600;padding:8px 16px;min-height:36px;display:inline-flex;align-items:center;border-radius:100px;text-decoration:none;white-space:nowrap}
+.pill .go:hover{background:#ff6a28}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:12px 22px;font:500 15px/1.2 var(--font);text-decoration:none;cursor:pointer;box-shadow:var(--ring)}
+.btn:hover{background:var(--carbon)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.ghost{font-weight:500;font-size:15px;color:var(--ink);text-decoration:underline;text-underline-offset:4px;padding:12px 0;min-height:44px;display:inline-flex;align-items:center}
+.pilltag{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:100px;padding:5px 12px;font-size:13px;font-weight:500;margin-bottom:28px}
+.pilltag i{width:6px;height:6px;border-radius:50%;background:var(--orange);display:block}
+
+/* hero: ocupa exatamente a primeira tela (84px = menu + margem) */
+:root{--nav-h:68px}
+.hero{min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));padding:0;display:flex;flex-direction:column;text-align:center;position:relative}
+.hero-main{width:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-block:32px 24px}
+.hero h1{max-width:800px;margin:0 auto 20px}
+.hero .sub{margin:0 auto 28px}
+.ctas{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
+.proofc{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:10px;text-align:left}
+.proofc p{line-height:1.3}
+.proofc b{display:block;font-size:13px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.proofc p span{display:block;font-size:12px;color:var(--stone);margin-top:1px}
+.stack{display:flex}
+.stack>span{width:30px;height:30px;border-radius:50%;border:2px solid var(--parchment);background:var(--linen);margin-left:-8px;display:grid;place-items:center;overflow:hidden;font-size:10px;font-weight:600;color:var(--graphite)}
+.stack>span:first-child{margin-left:0}
+.stack>span:nth-child(2){background:#e8e5dc}.stack>span:nth-child(3){background:#dedbd0}.stack>span:nth-child(4){background:#e8e5dc}
+.stack img{width:100%;height:100%;object-fit:cover}
+.perf{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px;max-width:960px;margin:0 auto;padding:16px 0;border-top:1px solid #e4e2da;border-bottom:1px solid #e4e2da}
+.perf div{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.perf .pi{flex:none;width:40px;height:40px;border-radius:12px;background:var(--paper);border:1px solid var(--linen);box-shadow:var(--glow);display:grid;place-items:center;color:var(--orange)}
+.perf strong{display:block;font-size:22px;line-height:1.1;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.perf span.l{display:block;font-size:13px;color:var(--stone);line-height:1.3;margin-top:2px}
+.hero-base{padding-bottom:4px;width:100%;min-width:0}
+.cue{display:flex;flex-direction:column;align-items:center;gap:8px;margin:0 auto;padding:4px 16px 12px;color:var(--stone);text-decoration:none;font-size:12px;font-weight:500}
+.cue i{width:36px;height:36px;border-radius:50%;border:1px solid #dcdad2;display:grid;place-items:center;background:var(--paper);animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){.cue i{animation:none}}
+@media(min-width:900px){
+  .hero-main{padding-block:12px 20px}
+  .hero .sub{max-width:640px;margin-bottom:24px}
+  .pilltag{margin-bottom:20px}
+  .perf{grid-template-columns:repeat(4,1fr);gap:24px;padding:18px 0}
+  .perf div{flex-direction:row;gap:14px;text-align:left;padding:0 8px;justify-content:center}
+  .perf .pi{width:44px;height:44px}
+  .perf strong{font-size:24px}
+  .hero{justify-content:space-evenly}
+  .hero-main{flex:none}
+  .hero-base{padding-bottom:0}
+}
+
+/* cards */
+.grid3{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:860px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--paper);border:1px solid var(--linen);border-radius:8px;padding:24px;box-shadow:var(--glow)}
+.card{text-align:center}
+.card h3{color:var(--orange-deep);font-size:18px;line-height:1.38;letter-spacing:-.04em;margin-bottom:8px}
+.card p{font-size:15px;color:var(--stone);line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;justify-content:center}
+.chips span{background:var(--paper);border:1px solid var(--linen);border-radius:100px;padding:6px 14px;font-size:14px;font-weight:500}
+
+/* como fazemos */
+.split{display:grid;gap:48px;grid-template-columns:1fr}
+@media(min-width:900px){.split{grid-template-columns:1.05fr .95fr;align-items:stretch}.steps{display:flex;flex-direction:column}.steps li{flex:1;align-content:center}}
+.steps{list-style:none;padding:0;display:grid;gap:0;border-top:1px solid var(--linen)}
+.steps li{padding:20px 0;border-bottom:1px solid var(--linen);display:grid;gap:4px;text-align:center;justify-items:center}
+.steps b{color:var(--orange-deep);font-weight:600;font-size:18px;letter-spacing:-.04em}
+.steps span{color:var(--stone);font-size:15px;max-width:520px}
+@media(min-width:900px){.steps li{text-align:left;justify-items:start}}
+.mock{background:var(--paper);border-radius:16px;box-shadow:var(--glow);padding:24px}
+.mock h3{text-align:center;font-size:16px;letter-spacing:-.02em;padding-bottom:16px;border-bottom:1px solid var(--linen);margin-bottom:20px}
+.stage{border-radius:8px;padding:16px 20px;margin:0 auto 10px;color:#fff;text-align:center}
+.stage small{display:block;font-size:13px;font-weight:500;opacity:.85}
+.stage strong{font-size:26px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.stage em{font-style:normal;font-size:14px;font-weight:500;opacity:.8;margin-left:6px}
+.f1{width:100%;background:var(--graphite)}
+.f2{width:76%;background:var(--carbon)}
+.f3{width:52%;background:var(--orange)}
+.mock .cap{font-size:14px;color:var(--stone);margin-top:14px}
+.mock .ill{text-align:center;font-size:13px;color:var(--ash);margin-top:14px;padding-top:14px;border-top:1px solid var(--linen)}
+
+/* dark panels */
+.dark{background:var(--ink);color:#fff;border-radius:16px}
+.dark h2,.dark h3{color:#fff}
+.auth{padding:56px 40px}
+@media(max-width:600px){.auth{padding:40px 24px}}
+.auth .sub{color:#a8a8a8}
+.stats{list-style:none;padding:0;display:grid;gap:32px 24px;grid-template-columns:1fr;margin-top:48px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr);gap:32px}}
+.stat{border-top:1px solid #3a3a3a;padding-top:20px;text-align:center}
+.stat strong{display:block;white-space:nowrap;font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:600;letter-spacing:-.06em;color:var(--orange);font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:12px;font-size:15px;line-height:1.5;color:#b5b5b5}
+.stat span b{display:block;color:#fff;font-weight:600;font-size:18px;letter-spacing:-.03em;margin-bottom:6px}
+@media(min-width:900px){.stat{text-align:left}}
+
+/* diferenciais e entregaveis */
+
+.gap48{margin-top:80px}
+.grp{margin-bottom:24px}
+.dgrid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:860px){.dgrid{grid-template-columns:repeat(6,1fr)}.dc.w3{grid-column:span 3}.dc.w2{grid-column:span 2}}
+.dc{background:var(--carbon);border:1px solid #3a3a3a;border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;min-height:260px}
+.dc .ar{color:var(--orange);margin-bottom:8px}
+.dc h3{color:var(--orange);font-size:24px;line-height:1.2;letter-spacing:-.04em}
+@media(min-width:900px){.dc{align-items:flex-start;text-align:left}}
+.dc p{color:#b5b5b5;font-size:15px;line-height:1.55;max-width:34ch}
+.dc a{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-weight:600;font-size:14px;text-decoration:none;min-height:44px}
+.dc a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* educativa */
+.edu{max-width:900px;margin:0 auto;text-align:center}
+.edu h2,.edu-hl{margin-inline:auto}
+.edu h2{font-size:clamp(34px,5.6vw,56px);line-height:1.1;letter-spacing:-.06em;max-width:860px}
+.edu-hl{margin-top:20px;font-size:clamp(34px,5.6vw,56px);line-height:1.1;letter-spacing:-.06em;font-weight:600;color:var(--orange);max-width:860px;text-wrap:balance}
+.edu-cols{display:grid;gap:32px;grid-template-columns:1fr;margin-top:56px}
+@media(min-width:760px){.edu-cols{grid-template-columns:1fr 1fr;gap:56px}}
+.edu-cols>div{border-top:1px solid #dcdad2;padding-top:20px}
+.edu-cols h3{font-size:20px;letter-spacing:-.03em;margin-bottom:8px}
+.edu-cols p{color:var(--stone);font-size:17px;line-height:1.55;max-width:400px;margin-inline:auto}
+.edu-cta{margin-top:40px;display:inline-flex;justify-content:center;align-items:center;gap:12px;min-height:48px;font-weight:600;font-size:15px;text-decoration:none;color:var(--ink)}
+.edu-cta .dot{width:40px;height:40px;border-radius:50%;background:var(--orange);display:grid;place-items:center;transition:transform .2s}
+.edu-cta:hover .dot{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.edu-cta .dot{transition:none}}
+
+/* filtro */
+.fit{padding:56px 40px}
+@media(max-width:600px){.fit{padding:40px 20px}}
+.fit>h2{text-align:center;margin:0 auto 40px;max-width:640px;font-size:clamp(28px,4vw,40px)}
+.fitgrid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:860px){.fitgrid{grid-template-columns:1fr 1fr}}
+.fc{background:var(--carbon);border:1px solid #3a3a3a;border-radius:16px;padding:32px}
+@media(max-width:600px){.fc{padding:24px 20px}}
+.fc h3{color:#fff;font-size:24px;margin-bottom:24px}
+.fc ul{list-style:none;padding:0;display:grid;gap:20px}
+.fc li b{color:#fff;font-weight:600}
+.fc li{display:flex;gap:14px;align-items:flex-start;color:#d4d4d4;font-size:16px;line-height:1.5}
+.fc .ic{flex:none;margin-top:1px;color:var(--orange)}
+
+/* depoimentos */
+.quotes{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:860px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:var(--paper);border:1px solid var(--linen);border-radius:16px;padding:24px;box-shadow:var(--glow);display:flex;flex-direction:column;gap:20px}
+.quote p{font-size:16px;line-height:1.5}
+.quote footer{margin-top:auto;font-size:14px}
+.quote footer b{display:block;font-weight:600}
+.quote footer span{color:var(--stone)}
+.mark{font-size:12px;color:var(--orange-deep);font-weight:500}
+
+/* cta */
+.cta{position:relative;overflow:hidden;border-radius:16px;color:#fff;isolation:isolate;
+  background:
+   linear-gradient(135deg,rgba(238,91,22,.16) 0%,rgba(238,91,22,.03) 30%,rgba(8,5,4,0) 50%),
+   radial-gradient(70% 50% at 0% 100%,rgba(255,106,40,.34) 0,rgba(196,71,13,.1) 45%,rgba(8,5,4,0) 72%),
+   #070504}
+.cta::before,.cta::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none;filter:blur(70px)}
+.cta::before{width:420px;height:420px;right:-120px;top:-150px;background:radial-gradient(circle,rgba(255,120,50,.4),rgba(238,91,22,.14) 55%,transparent 72%)}
+.cta::after{width:520px;height:340px;right:14%;bottom:-240px;background:radial-gradient(ellipse,rgba(238,91,22,.3),rgba(120,40,8,.1) 55%,transparent 75%)}
+@media(max-width:899px){.cta::before{width:300px;height:300px;right:-110px;top:-100px}.cta::after{width:360px;right:-40px;bottom:-190px}}
+.cta-in{display:grid;gap:40px;grid-template-columns:1fr;padding:56px 40px;align-items:center}
+@media(min-width:900px){.cta-in{grid-template-columns:1.05fr .95fr;gap:56px;padding:72px 56px}}
+@media(max-width:600px){.cta-in{padding:40px 20px}}
+.cta h2{color:#fff;font-size:clamp(32px,4.6vw,48px);line-height:1.12;letter-spacing:-.05em;max-width:520px}
+.cta-txt{display:grid;gap:20px;align-content:center;justify-items:center;text-align:center}
+.cta h2{margin-inline:auto}
+@media(min-width:900px){.cta-txt{justify-items:start;text-align:left}.cta h2{margin-inline:0}}
+.lede{font-size:18px;line-height:1.5;color:#cfcfcf;max-width:460px}
+.pts{list-style:none;padding:0;display:grid;gap:14px;max-width:460px;text-align:left}
+.pts li{display:flex;gap:12px;align-items:flex-start;color:#e6e6e6;font-size:16px;line-height:1.45}
+.pts svg{flex:none;color:var(--orange);margin-top:1px}
+.next{font-size:14px;color:#a8a8a8}
+form{background:rgba(48,48,54,.55);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:32px;box-shadow:rgba(0,0,0,.35) 0 24px 60px}
+@media(max-width:600px){form{padding:24px 18px}}
+.field{margin-bottom:18px}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:8px;color:#fff}
+input[type=text],input[type=tel],select{width:100%;min-height:48px;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:12px 20px;font:400 16px var(--font);color:#fff;background:rgba(10,10,12,.72)}
+input::placeholder{color:#8d8d93}
+select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;padding-right:44px}
+select:invalid{color:#8d8d93}
+select option{color:#171717;background:#fff}
+input:focus,select:focus{outline:2px solid var(--orange);outline-offset:2px;border-color:transparent}
+.err{color:#ff9b88;font-size:13px;margin-top:6px;display:none}
+.bad>.err{display:block}
+.field.bad input,.field.bad select{border-color:#ff9b88}
+.go2{width:100%;min-height:52px;margin-top:6px;border-radius:100px;background:var(--orange);color:#fff;font-weight:600;font-size:16px;box-shadow:none}
+.go2:hover{background:#ff6a28}
+.fine{font-size:13px;color:#ff9b88;margin-top:12px;text-align:center;min-height:1em}
+.result{display:none;padding:16px 0}
+.result h3{color:#fff;margin-bottom:12px}
+.result p{color:#cfcfcf;max-width:420px}
+.sent .fields{display:none}
+
+footer.f{background:#0a0705;color:#fff;padding:64px 0 40px;margin-top:40px}
+.fgrid{display:grid;gap:32px;grid-template-columns:1fr;align-items:start}
+@media(min-width:760px){.fgrid{grid-template-columns:1.2fr 1fr}}
+footer.f img{height:18px;width:auto}
+footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-height:1.5}
+.fbase{margin-top:48px;padding-top:24px;border-top:1px solid #2a2523;font-size:13px;color:#8d8d93}
+.proofc[hidden]{display:none}
+@media(max-width:820px){.pill{padding:5px 5px 5px 18px}.pill .go{min-height:40px;padding:8px 14px;font-size:13px}}
+.ctas .btn{background:var(--orange);color:#fff;font-weight:600}
+.ctas .btn:hover{background:#ff6a28}
+@media(max-width:600px){.head{margin-bottom:32px}.dc{min-height:0;padding:24px 20px}.dc a{padding-top:12px}.edu-cols{margin-top:40px}.gap48{margin-top:56px}.fc h3{font-size:20px}.fit>h2{margin-bottom:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* animações de entrada */
+@keyframes dotpop{0%{transform:scale(.2);opacity:0}60%{transform:scale(1.35);opacity:1}100%{transform:scale(1);opacity:1}}
+.js [data-r]{opacity:0;transform:translateY(20px);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s);will-change:opacity,transform}
+.js [data-r].in{opacity:1;transform:none;filter:none}
+.js .hero h1 .pt{display:inline-block;opacity:0}
+.js .hero h1.in .pt{animation:dotpop .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0s) + .55s)}
+.js .head h2 .pt,.js .fit h2 .pt,.js .cta h2 .pt,.js .auth h2 .pt,.js .edu h2 .pt{display:inline-block;opacity:0}
+.js .in .pt,.js .in.pt{animation:dotpop .6s cubic-bezier(.2,.7,.2,1) .5s forwards}
+.js header[data-r]{transform:translateY(-14px);filter:none}
+@media(prefers-reduced-motion:reduce){.js [data-r],.js .pt{opacity:1!important;transform:none!important;filter:none!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="nav"><nav class="pill" aria-label="Principal">
+  <a href="#conteudo" aria-label="Focus Performance, início"><img src="assets/logo.png" alt="Focus"></a>
+  <ul>
+    <li><a href="#para-quem">Para quem</a></li>
+    <li><a href="#como">Como trabalhamos</a></li>
+    <li><a href="#diferenciais">Diferenciais</a></li>
+    <li id="nav-dep" hidden><a href="#depoimentos">Depoimentos</a></li>
+  </ul>
+  <a class="go" href="#contato">Agendar diagnóstico</a>
+</nav></header>
+
+<main id="conteudo">
+<section class="hero" id="topo">
+  <div class="wrap hero-main">
+    <span class="pilltag"><i></i>Vagas limitadas por semestre</span>
+    <h1>Não somos uma agência<span class="pt">.</span><br>Somos estrutura<span class="pt">.</span></h1>
+    <p class="sub">Faça de 2027 o ano mais lucrativo da sua empresa através de tráfego pago estratégico.</p>
+    <div class="ctas"><a class="btn" href="#contato">Agendar diagnóstico</a><a class="ghost" href="#para-quem">Saiba mais</a></div>
+    <div class="proofc" hidden><span class="stack" id="stack"><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v14M6 18h9a2 2 0 0 0 2-2v-6h-4l-2 3H6M3 16h3"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="15" cy="19.5" r="1.3"/></svg></span><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="14" width="10" height="4" rx="1"/><path d="M8 14v-3h4M12 11l5-6 3 2-3 8"/><circle cx="6" cy="20" r=".8"/><circle cx="10" cy="20" r=".8"/></svg></span><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V7M5 7h14M5 10l7-3M19 7v6M17 13h4"/></svg></span><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16a7 7 0 0 1 14 0H5zM3 19h18M12 9v4"/></svg></span></span></div>
+  </div>
+  <div class="wrap hero-base">
+    <div class="perf">
+      <div><span class="pi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><p><strong>+6 anos</strong><span class="l">de mercado</span></p></div>
+      <div><span class="pi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="10" cy="8" r="3.5"/><path d="M17 5.5a3 3 0 0 1 0 5.5M20 20c0-2.3-1.3-4.3-3.2-5.3"/></svg></span><p><strong>+200 mil</strong><span class="l">leads gerados</span></p></div>
+      <div><span class="pi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><p><strong>5,4x</strong><span class="l">ROAS média dos parceiros</span></p></div>
+      <div><span class="pi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M16 14.5h2"/></svg></span><p><strong>+R$ 500 mil</strong><span class="l">gerenciados em anúncios</span></p></div>
+    </div>
+  </div>
+  <a class="cue" href="#para-quem" aria-label="Ir para a próxima seção"><i><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></i></a>
+</section>
+
+<section id="para-quem"><div class="wrap">
+  <div class="head center">
+    <h2>Se você se reconhece em algum destes pontos, o problema não é o anúncio<span class="pt">.</span></h2>
+    <p class="sub">Estas são as dores que vemos com mais frequência em empresas que investem em tráfego pago.</p>
+  </div>
+  <div class="grid3">
+    <article class="card"><h3>Muito tráfego, pouca conversão</h3><p>Os cliques e as conversas aparecem, mas as vendas não acompanham o investimento.</p></article>
+    <article class="card"><h3>Você não sabe de onde vem o lead</h3><p>Sem origem e jornada rastreadas, não dá para saber qual campanha traz resultado e qual só gasta verba.</p></article>
+    <article class="card"><h3>Campanha otimizada para a conversa errada</h3><p>A plataforma aprende a buscar conversa iniciada, não lead qualificado. Você paga por curiosos.</p></article>
+    <article class="card"><h3>Ninguém sabe quem é o lead qualificado</h3><p>Sem esse critério definido, o anúncio, o comercial e a meta de vendas falam línguas diferentes.</p></article>
+    <article class="card"><h3>O faturamento travou em um patamar</h3><p>Você tenta romper a barreira de faturamento e as campanhas atuais não sustentam o próximo nível.</p></article>
+    <article class="card"><h3>Mais resultado sem dobrar a verba</h3><p>Você quer vender mais no mês sem depender de investir bem mais em anúncio.</p></article>
+  </div>
+</div></section>
+
+<section id="como"><div class="wrap">
+  <div class="head center">
+    <h2>Da estratégia à venda fechada, com cada etapa medida<span class="pt">.</span></h2>
+  </div>
+  <div class="split">
+    <ol class="steps" style="list-style:none">
+      <li><b>Estratégia pensada para o seu negócio</b><span>Do posicionamento à segmentação dos anúncios.</span></li>
+      <li><b>Anúncios no Google e no Meta</b><span>Para aparecer para quem tem intenção de compra, não para curioso.</span></li>
+      <li><b>Rastreamento do contato até a venda</b><span>Conectamos o WhatsApp de atendimento para mostrar o volume real de contatos, a origem de cada um e a jornada de compra.</span></li>
+      <li><b>Acompanhamento do funil comercial</b><span>Do primeiro contato à venda fechada, com as métricas à vista.</span></li>
+    </ol>
+    <div class="mock" role="img" aria-label="Exemplo ilustrativo de funil: 110 contatos, 33 cotações enviadas, 5 vendas realizadas">
+      <h3>Funil da jornada de compra</h3>
+      <div class="stage f1"><small>Fizeram contato</small><strong>100%<em>(110)</em></strong></div>
+      <div class="stage f2"><small>Cotação enviada</small><strong>30%<em>(33)</em></strong></div>
+      <div class="stage f3"><small>Venda realizada</small><strong>15%<em>(5)</em></strong></div>
+      <p class="ill">Exemplo ilustrativo</p>
+    </div>
+  </div>
+  <div class="center-t" style="margin-top:40px;text-align:center"><a class="edu-cta" style="margin-top:0" href="#contato"><span class="dot"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Entrar em contato</a></div>
+</div></section>
+
+<section id="resultados"><div class="wrap">
+  <div class="dark auth">
+    <h2 style="max-width:900px;margin-inline:auto;text-align:center">Nossa meta: no mínimo 5x de retorno sobre o investimento em 90 dias<span class="pt">.</span></h2>
+    <ol class="stats">
+      <li class="stat"><strong>01</strong><span><b>Reunião de diagnóstico</b>Entendemos a sua operação e o seu objetivo.</span></li>
+      <li class="stat"><strong>02</strong><span><b>Plano de ação</b>Estratégia desenhada para a sua empresa.</span></li>
+      <li class="stat"><strong>03</strong><span><b>Execução</b>Anúncios e rastreamento até a venda.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="diferenciais"><div class="wrap">
+  <div class="head center">
+    <h2>Um parceiro de negócio, não mais uma agência<span class="pt">.</span></h2>
+    <p class="sub">Assessoria estratégica, não uma agência que atende 10 clientes novos por mês.</p>
+  </div>
+  <div class="grid3">
+    <article class="card"><h3>Estratégia antes da execução</h3><p>Pensamos o negócio com você, do posicionamento às métricas, em vez de só implementar campanhas.</p></article>
+    <article class="card"><h3>Você não vira mais um</h3><p>Trabalhamos com vagas limitadas por semestre para dar a atenção que uma parceria pede.</p></article>
+    <article class="card"><h3>Dados até a venda</h3><p>Você vê quantos contatos estavam qualificados e quantas vendas foram feitas, com valores.</p></article>
+  </div>
+  <div class="gap48">
+    <h3 class="grp center-t">O que você recebe</h3>
+    <div class="dgrid">
+      <article class="dc w3"><svg class="ar" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg><h3>Estratégias personalizadas</h3><p>Estratégia pensada para o seu negócio, do posicionamento à segmentação dos anúncios.</p><a href="#contato">Falar sobre isso <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg></a></article>
+      <article class="dc w3"><svg class="ar" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg><h3>Gestão de tráfego</h3><p>Anúncios no Google e no Meta otimizados para lead qualificado, não para conversa iniciada.</p><a href="#contato">Falar sobre isso <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg></a></article>
+      <article class="dc w2"><svg class="ar" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg><h3>Confecção de criativos</h3><p>Edição de imagens e vídeos para os seus anúncios.</p><a href="#contato">Falar sobre isso <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg></a></article>
+      <article class="dc w2"><svg class="ar" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg><h3>Landing pages</h3><p>Páginas que transformam cliques em contatos qualificados no WhatsApp, com o texto incluído.</p><a href="#contato">Falar sobre isso <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg></a></article>
+      <article class="dc w2"><svg class="ar" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></svg><h3>Funil comercial</h3><p>Do primeiro contato à venda fechada, com rastreamento e acompanhamento das métricas.</p><a href="#contato">Falar sobre isso <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg></a></article>
+    </div>
+  </div>
+</div></section>
+
+<section id="depoimentos" hidden><div class="wrap">
+  <div class="head center">
+    <h2>O que os parceiros dizem sobre trabalhar com a Focus<span class="pt">.</span></h2>
+  </div>
+  <div class="quotes" id="quotes"></div>
+</div></section>
+
+<section id="filtro"><div class="wrap">
+  <div class="dark fit">
+    <h2>A Focus Performance<br>não é para todo mundo<span class="pt">.</span></h2>
+    <div class="fitgrid">
+      <div class="fc"><h3>Pra quem é</h3>
+        <ul>
+          <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Fatura a partir de R$ 25 mil por mês.</b></span></li>
+          <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Investe no mínimo R$ 2.000 por mês em anúncios.</b></span></li>
+          <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Já anuncia, ou está pronta para anunciar, e quer previsibilidade.</span></li>
+          <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vê o tráfego como alavanca de negócio, não como custo.</span></li>
+        </ul>
+      </div>
+      <div class="fc"><h3>Pra quem não é</h3>
+        <ul>
+          <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Fatura menos de R$ 25 mil por mês.</b></span></li>
+          <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Não pode investir R$ 2.000 por mês em anúncios.</b></span></li>
+          <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Quer só posts e campanhas, sem estratégia comercial.</span></li>
+          <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Não atende os contatos com rapidez.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="estrategia"><div class="wrap">
+  <div class="edu">
+    <h2>Tudo que sua empresa precisa para vender mais com o mesmo investimento<span class="pt">.</span></h2>
+    <p class="edu-hl">O problema quase nunca é o tráfego, mas a estratégia por trás dele.</p>
+    <div class="edu-cols">
+      <div><h3>Isso é um problema grave.</h3><p>Você investe em anúncio, recebe muita conversa e pouca venda, e não sabe de onde vem o que dá certo.</p></div>
+      <div><h3>Mas a gente encontrou uma solução.</h3><p>Rastreamos o lead até a venda e otimizamos a campanha para quem realmente compra, não para quem só puxou assunto.</p></div>
+    </div>
+      </div>
+</div></section>
+
+<section id="contato"><div class="wrap">
+  <div class="cta">
+    <div class="cta-in">
+      <div class="cta-txt">
+        <h2>Vagas limitadas por semestre<span class="pt">.</span></h2>
+        <p class="lede">Acompanhamento de perto para o seu negócio.</p>
+        <ul class="pts">
+          <li><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Você fala direto com quem pensa a sua estratégia.</span></li>
+          <li><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#171717" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Meta de no mínimo 5x de ROAS em 90 dias.</span></li>
+        </ul>
+        <p class="next">Depois do envio, entramos em contato.</p>
+      </div>
+      <div id="box">
+        <form id="lead" novalidate>
+          <div class="fields">
+            <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" aria-describedby="e-nome" aria-required="true" enterkeyhint="next"><p class="err" role="alert" id="e-nome">Informe seu nome.</p></div>
+            <div class="field"><label for="tel">Telefone com DDD</label><input id="tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" aria-describedby="e-tel" aria-required="true" maxlength="16" enterkeyhint="next"><p class="err" role="alert" id="e-tel">Informe um telefone com DDD.</p></div>
+            <div class="field"><label for="insta">Instagram da empresa</label><input id="insta" name="instagram" type="text" placeholder="@suaempresa" autocapitalize="none" autocorrect="off" spellcheck="false" aria-describedby="e-insta" aria-required="true" enterkeyhint="next"><p class="err" role="alert" id="e-insta">Informe o Instagram da empresa.</p></div>
+            <div class="field"><label for="fat">Faturamento mensal</label>
+              <select id="fat" name="faturamento" aria-describedby="e-fat" aria-required="true">
+                <option value="" selected disabled>Selecione</option>
+                <option value="menos-25k">Menos de R$ 25 mil</option>
+                <option value="25k-50k">De R$ 25 mil a R$ 50 mil</option>
+                <option value="50k-100k">De R$ 50 mil a R$ 100 mil</option>
+                <option value="100k-mais">Acima de R$ 100 mil</option>
+              </select><p class="err" role="alert" id="e-fat">Escolha uma faixa de faturamento.</p></div>
+            <button class="btn go2" type="submit">Agendar diagnóstico</button>
+            <p class="fine" id="msg" role="status"></p>
+          </div>
+          <div class="result" id="ok" tabindex="-1" role="status"><h3>Recebemos seus dados.</h3><p>Entraremos em contato pelo telefone informado.</p></div>
+          <div class="result" id="no" tabindex="-1" role="status"><h3>Obrigado pelo interesse.</h3><p>No momento atendemos empresas com faturamento a partir de R$ 25 mil por mês.</p></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer class="f"><div class="wrap">
+  <div class="fgrid">
+    <div><img src="assets/logo.png" alt="Focus Performance"><p class="tag">Tráfego pago estratégico como alavanca para o seu negócio.</p></div>
+  </div>
+  <p class="fbase">© 2026 Focus Performance. Todos os direitos reservados.</p>
+</div></footer>
+
+<script>
+// Depoimentos reais entram aqui: { texto, nome, cargo }. Lista vazia mantém a seção oculta.
+var CLIENTES = [];
+(function(){
+  // Logos reais dos clientes: { src, nome }. Enquanto a lista estiver vazia, ficam os ícones do segmento.
+  if(!CLIENTES.length) return;
+  var st=document.getElementById('stack');
+  st.querySelectorAll('.co').forEach(function(e){e.remove()});
+  CLIENTES.slice(0,4).forEach(function(c){var s=document.createElement('span');
+    var i=document.createElement('img');i.src=c.src;i.alt='';s.appendChild(i);st.appendChild(s)});
+})();
+var DEPOIMENTOS = [];
+(function(){
+  if(DEPOIMENTOS.length){
+    var q=document.getElementById('quotes');
+    DEPOIMENTOS.forEach(function(d){
+      var a=document.createElement('article');a.className='quote';
+      var p=document.createElement('p');p.textContent='“'+d.texto+'”';
+      var f=document.createElement('footer');
+      var b=document.createElement('b');b.textContent=d.nome;
+      var s=document.createElement('span');s.textContent=d.cargo;
+      f.appendChild(b);f.appendChild(s);a.appendChild(p);a.appendChild(f);
+      if(d.exemplo){var m=document.createElement('span');m.className='mark';m.textContent='Texto de exemplo, substituir por depoimento real';a.insertBefore(m,p)}
+      q.appendChild(a);
+    });
+    document.getElementById('depoimentos').hidden=false;
+    document.getElementById('nav-dep').hidden=false;
+  }
+  var f=document.getElementById('lead'), box=document.getElementById('box'), msg=document.getElementById('msg');
+  f.telefone.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,11);var s=d;if(d.length>2)s='('+d.slice(0,2)+') '+d.slice(2);if(d.length>7)s='('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);this.value=s});
+  function mark(el,bad){el.classList.toggle('bad',bad);var i=el.querySelector('input,select');if(i)i.setAttribute('aria-invalid',bad?'true':'false')}
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); msg.textContent='';
+    var nome=f.nome.value.trim(), tel=f.telefone.value.replace(/\D/g,''), insta=f.instagram.value.trim();
+    var fat=f.faturamento.value;
+    var okNome=nome.length>1, okTel=tel.length>=10&&tel.length<=13, okInsta=insta.replace('@','').length>1;
+    mark(f.nome.parentNode,!okNome); mark(f.telefone.parentNode,!okTel); mark(f.instagram.parentNode,!okInsta); mark(f.faturamento.parentNode,!fat);
+    if(!(okNome&&okTel&&okInsta&&fat)){var b=f.querySelector('.bad input,.bad select');if(b)b.focus();return}
+    var qualified=fat!=='menos-25k';
+    var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='Enviando...';
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nome:nome,telefone:tel,instagram:insta,faturamento:fat,qualificado:qualified})})
+      .then(function(r){if(!r.ok)throw 0})
+      .then(function(){show(qualified)})
+      .catch(function(){ if(!qualified){show(false)} else {btn.disabled=false;btn.textContent='Agendar diagnóstico';msg.textContent='Não foi possível enviar agora. Tente novamente em instantes.'} });
+  });
+  function show(q){
+    box.classList.add('sent');
+    var r=document.getElementById(q?'ok':'no'); r.style.display='block'; r.focus();
+  }
+})();
+
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heroSel=['header','.pilltag','.hero h1','.hero .sub','.hero .ctas','.hero .perf','.hero .cue'];
+  heroSel.forEach(function(s,i){var e=document.querySelector(s);if(e){e.setAttribute('data-r','');e.style.setProperty('--d',(0.08+i*0.12)+'s')}});
+  var groups=['.head>*','.grid3 .card','.dgrid .dc','.steps li','.mock','.mock .stage','.stats .stat','.fit>h2','.fc','.edu h2','.edu-hl','.edu-cols>div','.edu-cta','.center-t','.grp','.auth>h2','.cta-txt>*','#box','.quotes>*','footer.f .wrap>*'];
+  groups.forEach(function(sel){
+    var seen=new Map();
+    document.querySelectorAll(sel).forEach(function(e){
+      if(e.hasAttribute('data-r'))return;
+      var par=e.parentNode,n=seen.get(par)||0;seen.set(par,n+1);
+      e.setAttribute('data-r','');e.style.setProperty('--d',Math.min(n,5)*0.09+'s');
+    });
+  });
+  var all=document.querySelectorAll('[data-r]');
+  if(reduce||!('IntersectionObserver' in window)){all.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  requestAnimationFrame(function(){requestAnimationFrame(function(){all.forEach(function(e){io.observe(e)})})});
+  setTimeout(function(){all.forEach(function(e){e.classList.add('in')})},6000);
+})();
+</script>
+</body>
+</html>

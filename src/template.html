@@ -272,7 +272,7 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 .js .head h2 .pt,.js .fit h2 .pt,.js .cta h2 .pt,.js .auth h2 .pt,.js .edu h2 .pt{display:inline-block;opacity:0}
 .js .in .pt,.js .in.pt{animation:dotpop .6s cubic-bezier(.2,.7,.2,1) .5s forwards}
 .js header[data-r]{transform:translateY(-14px);filter:none}
-@media(prefers-reduced-motion:reduce){.js [data-r],.js .pt{opacity:1!important;transform:none!important;filter:none!important;transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){.js [data-r]{transform:none!important;filter:none!important;transition:opacity .7s ease!important;transition-delay:var(--d,0s)!important}.js .pt{animation:none!important;opacity:1!important}}
 </style>
 </head>
 <body>
@@ -531,7 +531,7 @@ var DEPOIMENTOS = {{TESTIMONIALS}};
     });
   });
   var all=document.querySelectorAll('[data-r]');
-  if(reduce||!('IntersectionObserver' in window)){all.forEach(function(e){e.classList.add('in')});return}
+  if(!('IntersectionObserver' in window)){all.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   requestAnimationFrame(function(){requestAnimationFrame(function(){all.forEach(function(e){io.observe(e)})})});
   setTimeout(function(){all.forEach(function(e){e.classList.add('in')})},6000);

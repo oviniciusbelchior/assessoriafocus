@@ -282,6 +282,34 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 .dc{scale:calc(1 + var(--p,0)*.022);border-color:color-mix(in srgb,var(--orange) calc(var(--p,0)*60%),#3a3a3a)}
 @media(prefers-reduced-motion:reduce){.perf>div{translate:none}.dc{scale:none}}
 @media(prefers-reduced-motion:reduce){.js [data-r]{transform:none!important;filter:none!important;transition:opacity .7s ease!important;transition-delay:var(--d,0s)!important}.js .pt{animation:none!important;opacity:1!important}}
+/* hero escuro com vídeo */
+.hero{background:#000;color:#fff;overflow:hidden;isolation:isolate}
+.hero .poster,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6;z-index:-4}
+.hero .poster{background:url("https://images.unsplash.com/photo-1647356191320-d7a1f80ca777?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080") center/cover}
+.hero video{z-index:-3;background:transparent}
+.hero .ov{position:absolute;inset:0;z-index:-2;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.hero .g{position:absolute;z-index:-1;border-radius:50%;filter:blur(120px);mix-blend-mode:screen;pointer-events:none}
+.hero .g1{top:-20%;left:20%;width:600px;height:600px;max-width:100vw;background:rgba(30,58,138,.2)}
+.hero .g2{bottom:-10%;right:20%;width:500px;height:500px;max-width:100vw;background:rgba(49,46,129,.2)}
+.hero h1{background:linear-gradient(to bottom,#fff,#fff,#b4c0ff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.08em}
+.js .hero h1 .pt,.js .hero h1.in .pt{display:inline;opacity:1;animation:none;color:inherit;-webkit-text-fill-color:transparent}
+.hero .sub{color:rgba(255,255,255,.72)}
+.hero .pilltag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hero .ctas .btn{background:#fff;color:#0a0400;font-weight:500;font-size:17px;border-radius:999px;padding:8px 8px 8px 24px;gap:14px;box-shadow:none;transition:transform .3s,box-shadow .3s}
+.hero .ctas .btn:hover{background:#fff;box-shadow:0 0 20px rgba(255,255,255,.3);transform:scale(1.05)}
+.hero .ctas .arr{width:40px;height:40px;border-radius:50%;background:var(--orange);display:grid;place-items:center;flex:none;transition:background .2s}
+.hero .ctas .btn:hover .arr{background:#ff6a28}
+.hero .ctas .ghost{color:rgba(255,255,255,.72);text-decoration:none;gap:8px;padding:8px 16px;border-radius:8px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:color .2s,background .2s}
+.hero .ctas .ghost:hover{color:#fff;background:rgba(255,255,255,.06)}
+.hero .ctas .ghost svg{transition:transform .2s}
+.hero .ctas .ghost:hover svg{transform:translateX(4px)}
+.hero .perf{border-color:rgba(255,255,255,.14)}
+.hero .perf .pi{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);box-shadow:none}
+.hero .perf strong{color:#fff}
+.hero .perf span.l{color:rgba(255,255,255,.66)}
+.hero .cue{color:rgba(255,255,255,.7)}
+.hero .cue i{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.25)}
+@media(prefers-reduced-motion:reduce){.hero .ctas .btn:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -293,11 +321,12 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 
 <main id="conteudo">
 <section class="hero" id="topo">
+  <div class="poster" aria-hidden="true"></div><video id="hv" muted loop playsinline autoplay aria-hidden="true"></video><div class="ov" aria-hidden="true"></div><div class="g g1" aria-hidden="true"></div><div class="g g2" aria-hidden="true"></div>
   <div class="wrap hero-main">
     <span class="pilltag"><i></i>Vagas limitadas por semestre</span>
     <h1><span class="ln">Não somos uma agência<span class="pt">.</span></span><br><span class="ln">Somos estrutura<span class="pt">.</span></span></h1>
     <p class="sub">Faça de 2027 o ano mais lucrativo da sua <span class="nw">empresa através de tráfego pago estratégico.</span></p>
-    <div class="ctas"><a class="btn" href="#contato">Agendar diagnóstico</a><a class="ghost" href="#para-quem">Saiba mais</a></div>
+    <div class="ctas"><a class="btn" href="#contato">Agendar diagnóstico<span class="arr"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a><a class="ghost" href="#para-quem">Saiba mais <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
     <div class="proofc" hidden><span class="stack" id="stack"><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4v14M6 18h9a2 2 0 0 0 2-2v-6h-4l-2 3H6M3 16h3"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="15" cy="19.5" r="1.3"/></svg></span><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="14" width="10" height="4" rx="1"/><path d="M8 14v-3h4M12 11l5-6 3 2-3 8"/><circle cx="6" cy="20" r=".8"/><circle cx="10" cy="20" r=".8"/></svg></span><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V7M5 7h14M5 10l7-3M19 7v6M17 13h4"/></svg></span><span class="co" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16a7 7 0 0 1 14 0H5zM3 19h18M12 9v4"/></svg></span></span></div>
   </div>
   <div class="wrap hero-base">
@@ -561,6 +590,16 @@ var DEPOIMENTOS = {{TESTIMONIALS}};
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
   window.addEventListener('resize',upd);upd();
 })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15/dist/hls.min.js" defer></script>
+<script>
+window.addEventListener('load',function(){
+  var v=document.getElementById('hv');if(!v)return;
+  var src='https://stream.mux.com/T6oQJQ02cQ6N01TR6iHwZkKFkbepS34dkkIc9iukgy400g.m3u8';
+  var p=function(){v.play().catch(function(){})};
+  if(window.Hls&&Hls.isSupported()){var h=new Hls();h.loadSource(src);h.attachMedia(v);h.on(Hls.Events.MANIFEST_PARSED,p)}
+  else if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=src;v.addEventListener('loadedmetadata',p)}
+});
 </script>
 </body>
 </html>

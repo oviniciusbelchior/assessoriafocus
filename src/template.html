@@ -282,9 +282,19 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 .dc{scale:calc(1 + var(--p,0)*.022);border-color:color-mix(in srgb,var(--orange) calc(var(--p,0)*60%),#3a3a3a)}
 @media(prefers-reduced-motion:reduce){.perf>div{translate:none}.dc{scale:none}}
 @media(prefers-reduced-motion:reduce){.js [data-r]{transform:none!important;filter:none!important;transition:opacity .7s ease!important;transition-delay:var(--d,0s)!important}.js .pt{animation:none!important;opacity:1!important}}
+/* faq */
+#faq{padding-bottom:24px}
+.faq{max-width:760px;margin:0 auto;border-top:1px solid #e4e2da}
+.faq details{border-bottom:1px solid #e4e2da}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-weight:600;font-size:17px;line-height:1.35;letter-spacing:-.03em;color:var(--ink);min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:var(--orange);border:1px solid #e4e2da;transition:transform .3s,background .3s,color .3s}
+.faq details[open] summary i{transform:rotate(45deg);background:var(--orange);border-color:var(--orange);color:#fff}
+.faq details p{padding:0 44px 20px 0;color:var(--graphite);font-size:15px;line-height:1.6}
+@media(max-width:600px){.faq summary{font-size:15.5px;padding:18px 0}.faq details p{font-size:14px;padding-right:0}}
 /* hero estilo "na moral": vídeo tingido de laranja, barra de carregamento e entrada em sequência */
 .hero{--logo:url({{LOGO}});background:#1c0903;color:#fff;overflow:hidden;isolation:isolate;text-align:center}
-.hero .poster{position:absolute;z-index:-4;background:url({{GLASS}}) center/cover no-repeat;aspect-ratio:1;width:min(150vw,660px);right:-38vw;top:340px;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent);mask-image:radial-gradient(closest-side,#000 62%,transparent);opacity:.85;animation:hglass 2.4s cubic-bezier(.16,1,.3,1) .2s both}
+.hero .poster{position:absolute;z-index:-4;background:url({{GLASS}}) center/cover no-repeat;aspect-ratio:1;width:min(108vw,480px);left:50%;translate:-50% 0;top:350px;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent);mask-image:radial-gradient(closest-side,#000 62%,transparent);opacity:.85;animation:hglass 2.4s cubic-bezier(.16,1,.3,1) .2s both}
 @keyframes hglass{from{opacity:0;transform:translateX(6%) scale(1.04)}to{opacity:.85;transform:none}}
 .hero .tint{position:absolute;inset:0;z-index:-2;background:var(--orange);mix-blend-mode:color}
 .hero .shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(28,9,3,.35),rgba(28,9,3,0) 45%,rgba(28,9,3,.45));pointer-events:none}
@@ -310,7 +320,7 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 @media(max-width:600px){.hero h1{margin-bottom:18px}.hero .sub{font-size:14px;max-width:28ch}.hero-main{padding-block:44px 0;justify-content:flex-start!important}}
 @media(min-width:900px){
   .hero{text-align:left}
-  .hero .poster{width:min(64vw,1000px);right:-4vw;top:50%;translate:0 -50%}
+  .hero .poster{width:min(64vw,1000px);left:auto;right:-4vw;top:50%;translate:0 -50%}
   .hcontent{align-items:flex-start}
   .hero .hero-main{align-items:flex-start}
   .hero h1{margin:0 0 24px;max-width:11ch}
@@ -460,6 +470,19 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
       <div><h3>Mas a gente encontrou uma solução.</h3><p>Rastreamos o lead até a venda e otimizamos a campanha para quem realmente compra, não para quem só puxou assunto.</p></div>
     </div>
       </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="head center">
+    <h2>Perguntas frequentes<span class="pt">.</span></h2>
+  </div>
+  <div class="faq">
+    <details open><summary>Como funciona o diagnóstico?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>É uma conversa para entender o seu negócio, os seus números e onde o tráfego pago está travando as vendas. A partir dela, mostramos o que faria sentido no seu caso, sem compromisso.</p></details>
+    <details><summary>Para quais empresas a Focus é indicada?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Para empresas que já faturam a partir de R$ 25 mil por mês e querem crescer com tráfego pago estratégico, tratado como alavanca e não como custo.</p></details>
+    <details><summary>O que está incluído na assessoria?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Gestão de tráfego pago no Meta e no Google, criativos para os anúncios e rastreamento dos leads: de onde cada um veio, a jornada até a conversa, quais são qualificados e quais viraram venda, com os valores.</p></details>
+    <details><summary>Em quanto tempo vejo resultado?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Trabalhamos com a meta de um ROAS mínimo de 5x em 90 dias. Hoje, o ROAS médio dos nossos parceiros é de 5,4x.</p></details>
+    <details><summary>Vou precisar investir muito mais em anúncios?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Não necessariamente. O foco é vender mais com o investimento que você já tem, otimizando as campanhas para quem realmente compra, e não só para quem puxa conversa.</p></details>
+  </div>
 </div></section>
 
 <section id="contato"><div class="wrap">

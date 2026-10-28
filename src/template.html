@@ -102,10 +102,12 @@ h3{font-size:20px;line-height:1.27;letter-spacing:-.04em}
   .hero-main{padding-block:12px 20px}
   .hero .sub{max-width:760px;margin-bottom:24px}
   .pilltag{margin-bottom:20px}
-  .perf{grid-template-columns:repeat(4,1fr);gap:24px;padding:18px 0}
-  .perf div{flex-direction:row;gap:14px;text-align:left;padding:0 8px;justify-content:center}
-  .perf .pi{width:44px;height:44px}
-  .perf strong{font-size:22px}
+  .perf{display:flex;justify-content:space-between;align-items:center;max-width:none;gap:24px;padding:28px 0}
+  .perf div{flex-direction:row;gap:18px;text-align:left;padding:0}
+  .perf .pi{width:60px;height:60px;border-radius:16px}
+  .perf .pi svg{width:28px;height:28px}
+  .perf strong{font-size:clamp(26px,2.6vw,34px)}
+  .perf span.l{font-size:15px;margin-top:4px}
   .hero{justify-content:space-evenly}
   .hero-main{flex:none}
   .hero-base{padding-bottom:0}

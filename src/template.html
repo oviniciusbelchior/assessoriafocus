@@ -351,6 +351,18 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 </style>
 </head>
 <body>
+<script>
+  (function (w, d, src, id) {
+    if (w.ft) return;
+    w.ft = { accountCode: id };
+    var k = d.createElement('script');
+    k.async = true;
+    k.src = src;
+    (d.head || d.getElementsByTagName('head')[0]).appendChild(k);
+  })(window, document,
+     'https://focus-tracking.vercel.app/ft-1.0.js',
+     '2e9c5a0c-fc99-4899-860c-1198053ac2f3');
+</script>
 <script>document.documentElement.classList.add('js')</script>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 

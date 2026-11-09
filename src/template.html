@@ -115,7 +115,8 @@ h3{font-size:20px;line-height:1.27;letter-spacing:-.04em}
 
 /* cases de resultado */
 .cgrid{display:grid;gap:24px;grid-template-columns:1fr}
-@media(min-width:900px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:700px){.cgrid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}}
+.case[hidden]{display:none}
 .case{background:var(--paper);border:1px solid var(--linen);border-radius:16px;padding:28px 24px;box-shadow:var(--glow);display:flex;flex-direction:column;text-align:center}
 .case .nic{align-self:center;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:100px;padding:5px 12px;font-size:13px;font-weight:500}
 .case .nic i{width:6px;height:6px;border-radius:50%;background:var(--orange);display:block}
@@ -477,6 +478,17 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
   <!-- CASES: para editar, troque os números dentro de cada <article class="case">. Para um novo case, copie um <article> inteiro. -->
   <div class="cgrid">
     <article class="case">
+      <span class="nic"><i></i>Loja de sofás</span>
+      <p class="big">R$ 49 mil</p>
+      <p class="bl">em vendas fechadas em 90 dias</p>
+      <dl>
+        <div><dt>Investimento em anúncios</dt><dd>R$ 2.500</dd></div>
+        <div><dt>Taxa de conversão</dt><dd>23,8%</dd></div>
+        <div><dt>Crescimento vs. mês anterior</dt><dd>+35%</dd></div>
+        <div><dt>Tempo de projeto</dt><dd>90 dias</dd></div>
+      </dl>
+    </article>
+    <article class="case">
       <span class="nic"><i></i>Venda de máquinas pesadas</span>
       <p class="big">R$ 918 mil</p>
       <p class="bl">em vendas geradas pelos anúncios</p>
@@ -488,23 +500,14 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
       </dl>
     </article>
     <article class="case">
-      <span class="nic"><i></i>Loja de sofás</span>
-      <p class="big">R$ 49 mil</p>
-      <p class="bl">em vendas fechadas em 30 dias</p>
-      <dl>
-        <div><dt>Em oportunidades no funil</dt><dd>R$ 148 mil</dd></div>
-        <div><dt>Receita vs. mês anterior</dt><dd>+247%</dd></div>
-        <div><dt>Taxa de fechamento</dt><dd>23,8%</dd></div>
-        <div><dt>Oportunidades vs. mês anterior</dt><dd>+117%</dd></div>
-      </dl>
-    </article>
-    <article class="case">
       <span class="nic"><i></i>Buffet infantil</span>
-      <p class="big">R$ 57,7 mil</p>
-      <p class="bl">em contratos fechados em uma semana</p>
+      <p class="big">R$ 58 mil</p>
+      <p class="bl">em contratos fechados em 90 dias</p>
       <dl>
-        <div><dt>Festas contratadas</dt><dd>5</dd></div>
-        <div><dt>Ticket médio</dt><dd>R$ 11,5 mil</dd></div>
+        <div><dt>Investimento em anúncios</dt><dd>R$ 1.980</dd></div>
+        <div><dt>Taxa de conversão</dt><dd>18%</dd></div>
+        <div><dt>Crescimento vs. mês anterior</dt><dd>+60%</dd></div>
+        <div><dt>Tempo de projeto</dt><dd>90 dias</dd></div>
       </dl>
     </article>
   </div>

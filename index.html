@@ -558,7 +558,7 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
     <div class="fitgrid">
       <div class="fc"><h3>Pra quem é</h3>
         <ul>
-          <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Fatura a partir de R$ 25 mil por mês.</b></span></li>
+          <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Fatura mais de R$30 mil por mês.</b></span></li>
           <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Investe no mínimo R$ 2.000 por mês em anúncios.</b></span></li>
           <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Já anuncia, ou está pronta para anunciar, e quer previsibilidade.</span></li>
           <li><svg class="ic yes" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7 12.5 3.2 3.2L17 8.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vê o tráfego como alavanca de negócio, não como custo.</span></li>
@@ -566,7 +566,7 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
       </div>
       <div class="fc"><h3>Pra quem não é</h3>
         <ul>
-          <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Fatura menos de R$ 25 mil por mês.</b></span></li>
+          <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Fatura até R$30 mil por mês.</b></span></li>
           <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Não pode investir R$ 2.000 por mês em anúncios.</b></span></li>
           <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Quer só posts e campanhas, sem estratégia comercial.</span></li>
           <li><svg class="ic no" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Não atende os contatos com rapidez.</span></li>
@@ -609,16 +609,16 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
             <div class="field"><label for="fat">Faturamento mensal</label>
               <select id="fat" name="faturamento" aria-describedby="e-fat" aria-required="true">
                 <option value="" selected disabled>Selecione</option>
-                <option value="menos-25k">Menos de R$ 25 mil</option>
-                <option value="25k-50k">De R$ 25 mil a R$ 50 mil</option>
-                <option value="50k-100k">De R$ 50 mil a R$ 100 mil</option>
-                <option value="100k-mais">Acima de R$ 100 mil</option>
+                <option value="ate-30k">Até R$30 mil</option>
+                <option value="30k-60k">De R$30 a R$60 mil</option>
+                <option value="60k-100k">De R$60 a R$100 mil</option>
+                <option value="100k-mais">Acima de R$100 mil</option>
               </select><p class="err" role="alert" id="e-fat">Escolha uma faixa de faturamento.</p></div>
             <button class="btn go2" type="submit">Agendar diagnóstico</button>
             <p class="fine" id="msg" role="status"></p>
           </div>
           <div class="result" id="ok" tabindex="-1" role="status"><h3>Recebemos seus dados.</h3><p>Entraremos em contato pelo telefone informado.</p></div>
-          <div class="result" id="no" tabindex="-1" role="status"><h3>Obrigado pelo interesse.</h3><p>No momento atendemos empresas com faturamento a partir de R$ 25 mil por mês.</p></div>
+          <div class="result" id="no" tabindex="-1" role="status"><h3>Obrigado pelo interesse.</h3><p>No momento atendemos empresas com faturamento acima de R$30 mil por mês.</p></div>
         </form>
       </div>
     </div>
@@ -631,7 +631,7 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
   </div>
   <div class="faq">
     <details open><summary>Como funciona o diagnóstico?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>É uma conversa para entender o seu negócio, os seus números e onde o tráfego pago está travando as vendas. A partir dela, mostramos o que faria sentido no seu caso, sem compromisso.</p></details>
-    <details><summary>Para quais empresas a Focus é indicada?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Para empresas que já faturam a partir de R$ 25 mil por mês e querem crescer com tráfego pago estratégico, tratado como alavanca e não como custo.</p></details>
+    <details><summary>Para quais empresas a Focus é indicada?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Para empresas que já faturam mais de R$30 mil por mês e querem crescer com tráfego pago estratégico, tratado como alavanca e não como custo.</p></details>
     <details><summary>O que está incluído na assessoria?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Gestão de tráfego pago no Meta e no Google, criativos para os anúncios e rastreamento dos leads: de onde cada um veio, a jornada até a conversa, quais são qualificados e quais viraram venda, com os valores.</p></details>
     <details><summary>Em quanto tempo vejo resultado?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Trabalhamos com a meta de um ROAS mínimo de 5x em 90 dias. Hoje, o ROAS médio dos nossos parceiros é de 5,4x.</p></details>
     <details><summary>Vou precisar investir muito mais em anúncios?<i aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Não necessariamente. O foco é vender mais com o investimento que você já tem, otimizando as campanhas para quem realmente compra, e não só para quem puxa conversa.</p></details>
@@ -684,7 +684,7 @@ var DEPOIMENTOS = [];
     var okNome=nome.length>1, okTel=tel.length>=10&&tel.length<=13, okInsta=insta.replace('@','').length>1;
     mark(f.nome.parentNode,!okNome); mark(f.telefone.parentNode,!okTel); mark(f.instagram.parentNode,!okInsta); mark(f.faturamento.parentNode,!fat);
     if(!(okNome&&okTel&&okInsta&&fat)){var b=f.querySelector('.bad input,.bad select');if(b)b.focus();return}
-    var qualified=fat!=='menos-25k';
+    var qualified=fat!=='ate-30k';
     var btn=f.querySelector('button'); btn.disabled=true; btn.textContent='Enviando...';
     fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nome:nome,telefone:tel,instagram:insta,faturamento:fat,qualificado:qualified})})
       .then(function(r){if(!r.ok)throw 0})

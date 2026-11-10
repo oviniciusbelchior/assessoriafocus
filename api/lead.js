@@ -8,7 +8,7 @@ module.exports = async function handler(req, res) {
     telefone: String(b.telefone || '').replace(/\D/g, '').slice(0, 15),
     instagram: String(b.instagram || '').slice(0, 120),
     faturamento: String(b.faturamento || ''),
-    qualificado: b.faturamento !== 'menos-25k',
+    qualificado: b.faturamento !== 'ate-30k',
     recebidoEm: new Date().toISOString(),
   };
   if (!lead.nome || lead.telefone.length < 10 || !lead.instagram || !lead.faturamento) {

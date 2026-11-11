@@ -286,13 +286,46 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
 @media(max-width:380px){.lede,.pts li{font-size:12px}.cta-in{padding-inline:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+/* quem está por trás */
+.bio{display:grid;gap:32px;align-items:center}
+.bio-ph{position:relative;margin:0 auto;width:100%;max-width:380px;border-radius:16px;overflow:hidden;background:#cfcfcf;box-shadow:rgba(0,0,0,.12) 0 18px 40px}
+.bio-ph img{width:100%;height:auto;aspect-ratio:1/1.08;object-fit:cover;object-position:50% 12%}
+.bio-ph figcaption{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;gap:10px;background:rgba(23,23,23,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;border-radius:12px;padding:10px 14px;text-align:left}
+.bio-ph figcaption i{width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none}
+.bio-ph figcaption b{display:block;font-size:14px;font-weight:600;letter-spacing:-.02em}
+.bio-ph figcaption span{display:block;font-size:12px;color:#cfcfcf}
+.bio-tx{display:grid;justify-items:center;text-align:center;gap:16px}
+.bio-tx .pilltag{margin-bottom:0}
+.bio-tx h2{max-width:560px}
+.bio-tx p.sub{max-width:560px}
+.bio-tx p.sub b{color:var(--ink);font-weight:600}
+.bio-n{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:560px;margin-top:8px}
+.bio-n li{background:var(--ink);color:#fff;border-radius:12px;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.bio-n svg{color:var(--orange);flex:none}
+.bio-n strong{display:block;font-size:18px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.bio-n span{display:block;font-size:12px;color:#cfcfcf;line-height:1.3;margin-top:2px}
+.bio-btn{margin-top:8px;display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:6px 6px 6px 22px;border-radius:999px;background:var(--orange);color:#fff;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 10px 26px rgba(238,91,22,.28);transition:background .2s,transform .2s}
+.bio-btn:hover{background:#ff6a28;transform:translateY(-1px)}
+.bio-btn .arr{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;flex:none}
+@media(min-width:900px){
+  .bio{grid-template-columns:.9fr 1.1fr;gap:64px}
+  .bio-ph{max-width:480px;margin:0}
+  .bio-ph img{aspect-ratio:4/5}
+  .bio-tx{justify-items:start;text-align:left}
+  .bio-n{gap:12px;max-width:none}
+  .bio-n li{flex-direction:row;padding:16px;gap:12px;text-align:left}
+  .bio-n strong{font-size:20px}
+  .bio-n span{font-size:13px}
+}
+@media(max-width:380px){.bio-n strong{font-size:16px}.bio-n span{font-size:11px}}
+
 /* animações de entrada */
 @keyframes dotpop{0%{transform:scale(.2);opacity:0}60%{transform:scale(1.35);opacity:1}100%{transform:scale(1);opacity:1}}
 .js [data-r]{opacity:0;transform:translateY(20px);filter:blur(8px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s);will-change:opacity,transform}
 .js [data-r].in{opacity:1;transform:none;filter:none}
 .js .hero h1 .pt{display:inline-block;opacity:0}
 .js .hero h1.in .pt{animation:dotpop .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0s) + .55s)}
-.js .head h2 .pt,.js .fit h2 .pt,.js .cta h2 .pt,.js .auth h2 .pt,.js .edu h2 .pt,.js .met h2 .pt{display:inline-block;opacity:0}
+.js .head h2 .pt,.js .fit h2 .pt,.js .cta h2 .pt,.js .auth h2 .pt,.js .edu h2 .pt,.js .met h2 .pt,.js .bio h2 .pt{display:inline-block;opacity:0}
 .js .in .pt,.js .in.pt{animation:dotpop .6s cubic-bezier(.2,.7,.2,1) .5s forwards}
 .js header[data-r]{transform:translateY(-14px);filter:none}
 .js [data-dir=l]{transform:translateX(-44px)}
@@ -534,6 +567,27 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
   </div>
 </div></section>
 
+<section id="quem-somos"><div class="wrap">
+  <div class="bio">
+    <figure class="bio-ph">
+      <img src="/assets/vinicius.webp" width="800" height="1000" loading="lazy" decoding="async" alt="Vinicius Belchior, CEO da Focus Performance">
+      <figcaption><i></i><span><b>Vinicius Belchior</b><span>CEO e estrategista da Focus</span></span></figcaption>
+    </figure>
+    <div class="bio-tx">
+      <span class="pilltag"><i></i>Quem está por trás</span>
+      <h2>Por trás de cada campanha, tem estratégia de quem vive resultado<span class="pt">.</span></h2>
+      <p class="sub">Eu sou <b>Vinicius Belchior</b>, CEO da Focus Performance e estrategista digital há mais de 6 anos. Já são mais de 100 empresas atendidas com o mesmo foco: transformar investimento em anúncio em venda fechada.</p>
+      <p class="sub">Antes de subir qualquer campanha, eu quero entender a sua operação, os seus números e quem é o seu cliente ideal. É por isso que a Focus trabalha com vagas limitadas: estratégia de verdade pede acompanhamento de perto.</p>
+      <ul class="bio-n">
+        <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><p><strong>+6 anos</strong><span>de mercado</span></p></li>
+        <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M9 20.5v-4h6v4M8.5 8h1M14.5 8h1M8.5 12h1M14.5 12h1"/></svg><p><strong>+100</strong><span>empresas atendidas</span></p></li>
+        <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><p><strong>5,4x</strong><span>de ROAS médio</span></p></li>
+      </ul>
+      <a class="bio-btn" href="#contato">Agendar diagnóstico<span class="arr"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>
+    </div>
+  </div>
+</div></section>
+
 <section id="depoimentos" hidden><div class="wrap">
   <div class="head center">
     <h2>O que os parceiros dizem sobre trabalhar com a Focus<span class="pt">.</span></h2>
@@ -708,7 +762,7 @@ var DEPOIMENTOS = {{TESTIMONIALS}};
     e.setAttribute('data-dir',d);
     e.style.setProperty('--d',(wide?(i%3)*0.08:0)+'s');
   });
-  var groups=['.head>*','.grid3 .card','.dgrid .dc','.cgrid .case','.steps li','.mock','.mock .stage','.stats .stat','.fit>h2','.fc','.edu h2','.edu-hl','.edu-cols>div','.edu-cta','.center-t','.grp','.auth>h2','.met>*','.mgrid .mstep','.cta-txt>*','#box','.quotes>*','footer.f .wrap>*'];
+  var groups=['.head>*','.grid3 .card','.dgrid .dc','.cgrid .case','.steps li','.mock','.mock .stage','.stats .stat','.fit>h2','.fc','.edu h2','.edu-hl','.edu-cols>div','.edu-cta','.center-t','.grp','.auth>h2','.met>*','.mgrid .mstep','.cta-txt>*','#box','.quotes>*','.bio-ph','.bio-tx>*','footer.f .wrap>*'];
   groups.forEach(function(sel){
     var seen=new Map();
     document.querySelectorAll(sel).forEach(function(e){

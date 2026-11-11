@@ -813,9 +813,14 @@ var DEPOIMENTOS = {{TESTIMONIALS}};
 </script>
 <script>
 (function(){var m=document.getElementById('cmq');if(!m)return;
-var tr=m.querySelector('.mtrack'),cs=[].slice.call(tr.children).filter(function(e){return e.tagName==='ARTICLE'});
-cs.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.setAttribute('inert','');tr.appendChild(k)});
-m.style.setProperty('--mq-dur',(cs.length*12)+'s');m.classList.add('anim');
+var tr=m.querySelector('.mtrack'),cs=[].slice.call(tr.children).filter(function(e){return e.tagName==='ARTICLE'}),lw=0;
+function build(){var w=window.innerWidth;if(w===lw)return;lw=w;
+[].slice.call(tr.querySelectorAll('[data-clone]')).forEach(function(e){e.remove()});
+var set=0;cs.forEach(function(c){set+=c.getBoundingClientRect().width+parseFloat(getComputedStyle(c).marginRight)});
+var n=Math.max(1,Math.ceil(w/set)),tot=n*2-1;
+for(var i=0;i<tot;i++)cs.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.setAttribute('inert','');k.setAttribute('data-clone','');tr.appendChild(k)});
+m.style.setProperty('--mq-dur',(cs.length*12*n)+'s');}
+m.classList.add('anim');build();var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(build,200)});
 var to;function p(){clearTimeout(to);m.classList.add('paused')}function r(){clearTimeout(to);to=setTimeout(function(){m.classList.remove('paused')},1200)}
 m.addEventListener('touchstart',p,{passive:true});m.addEventListener('touchend',r);m.addEventListener('touchcancel',r);
 })();

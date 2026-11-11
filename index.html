@@ -121,7 +121,6 @@ h3{font-size:20px;line-height:1.27;letter-spacing:-.04em}
 .marquee.anim .mtrack{padding-left:0;animation:mq var(--mq-dur,48s) linear infinite}
 .marquee.anim.paused .mtrack,.marquee.anim:hover .mtrack,.marquee.anim:focus-within .mtrack{animation-play-state:paused}
 @keyframes mq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-@media(prefers-reduced-motion:reduce){.marquee.anim .mtrack{animation:none}}
 .case[hidden]{display:none}
 .case{flex:none;width:min(80vw,310px);margin-right:20px;scroll-snap-align:center;background:var(--paper);border:1px solid var(--linen);border-radius:16px;padding:28px 24px;box-shadow:var(--glow);display:flex;flex-direction:column;text-align:center}
 @media(min-width:700px){.case{width:340px;margin-right:24px}}
@@ -799,8 +798,7 @@ var DEPOIMENTOS = [];
 })();
 
 (function(){
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var perf=[].slice.call(document.querySelectorAll('.perf>div')),dcs=[].slice.call(document.querySelectorAll('.dgrid .dc')),tick=false;
+    var perf=[].slice.call(document.querySelectorAll('.perf>div')),dcs=[].slice.call(document.querySelectorAll('.dgrid .dc')),tick=false;
   function upd(){
     tick=false;
     var y=window.scrollY||0,vh=window.innerHeight,s=Math.min(y,360);
@@ -816,7 +814,6 @@ var DEPOIMENTOS = [];
 </script>
 <script>
 (function(){var m=document.getElementById('cmq');if(!m)return;
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 var tr=m.querySelector('.mtrack'),cs=[].slice.call(tr.children).filter(function(e){return e.tagName==='ARTICLE'});
 cs.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.setAttribute('inert','');tr.appendChild(k)});
 m.style.setProperty('--mq-dur',(cs.length*12)+'s');m.classList.add('anim');

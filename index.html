@@ -113,11 +113,18 @@ h3{font-size:20px;line-height:1.27;letter-spacing:-.04em}
   .hero-base{padding-bottom:0}
 }
 
-/* cases de resultado */
-.cgrid{display:grid;gap:24px;grid-template-columns:1fr}
-@media(min-width:700px){.cgrid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}}
+/* cases de resultado (carrossel) */
+.marquee{position:relative;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:8px 0 28px;scrollbar-width:none}
+.marquee::-webkit-scrollbar{display:none}
+.mtrack{display:flex;width:max-content;padding-left:max(20px,calc((100vw - 1160px)/2))}
+.marquee.anim{overflow:hidden;scroll-snap-type:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee.anim .mtrack{padding-left:0;animation:mq var(--mq-dur,48s) linear infinite}
+.marquee.anim.paused .mtrack,.marquee.anim:hover .mtrack,.marquee.anim:focus-within .mtrack{animation-play-state:paused}
+@keyframes mq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(prefers-reduced-motion:reduce){.marquee.anim .mtrack{animation:none}}
 .case[hidden]{display:none}
-.case{background:var(--paper);border:1px solid var(--linen);border-radius:16px;padding:28px 24px;box-shadow:var(--glow);display:flex;flex-direction:column;text-align:center}
+.case{flex:none;width:min(80vw,310px);margin-right:20px;scroll-snap-align:center;background:var(--paper);border:1px solid var(--linen);border-radius:16px;padding:28px 24px;box-shadow:var(--glow);display:flex;flex-direction:column;text-align:center}
+@media(min-width:700px){.case{width:340px;margin-right:24px}}
 .case .nic{align-self:center;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:100px;padding:5px 12px;font-size:13px;font-weight:500}
 .case .nic i{width:6px;height:6px;border-radius:50%;background:var(--orange);display:block}
 .case .loc{margin-top:10px;font-size:13px;color:var(--stone)}
@@ -125,10 +132,10 @@ h3{font-size:20px;line-height:1.27;letter-spacing:-.04em}
 .case .bl{margin-top:8px;font-size:15px;color:var(--ink);font-weight:500;letter-spacing:-.02em}
 .case dl{margin-top:24px;border-top:1px solid var(--linen);display:grid;grid-template-columns:1fr 1fr}
 .case dl div{display:flex;flex-direction:column;justify-content:center;padding:18px 12px;border-bottom:1px solid var(--linen)}
-.case dl div:nth-child(odd){border-right:1px solid var(--linen)}
+.case dl div:nth-child(even){border-right:1px solid var(--linen)}
+.case dl div.full{grid-column:1/-1}
 .case dt{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--stone);line-height:1.3;white-space:nowrap}
 .case dd{margin:6px 0 0;font-size:22px;white-space:nowrap;font-weight:600;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
-.case .per{margin-top:auto;padding-top:16px;font-size:13px;color:var(--ash)}
 @media(min-width:900px){.case{text-align:left}.case .nic{align-self:flex-start}}
 
 /* cards */
@@ -509,46 +516,58 @@ footer.f .tag{margin-top:16px;color:#a8a8a8;font-size:15px;max-width:360px;line-
     <h2>Resultados de quem já trabalha com a gente<span class="pt">.</span></h2>
     <p class="sub" style="margin-inline:auto">Resultados de parceiros, com cada venda rastreada até o anúncio que a gerou.</p>
   </div>
-  <!-- CASES: para editar, troque os números dentro de cada <article class="case">. Para um novo case, copie um <article> inteiro. -->
-  <div class="cgrid">
-    <article class="case">
-      <span class="nic"><i></i>Loja de sofás</span>
-      <p class="loc">Parceiro de São Paulo</p>
-      <p class="big">R$ 49 mil</p>
-      <p class="bl">em vendas fechadas em 90 dias</p>
-      <dl>
-        <div><dt>Investimento</dt><dd>R$ 2.500</dd></div>
-        <div><dt>Conversão</dt><dd>14%</dd></div>
-        <div><dt>Crescimento</dt><dd>+35%</dd></div>
-        <div><dt>Projeto</dt><dd>90 dias</dd></div>
-      </dl>
-    </article>
-    <!-- Loja de moveis (MG): numeros informados pelo Vinicius em 2026-11-09, sem print. -->
-    <article class="case">
-      <span class="nic"><i></i>Loja de móveis</span>
-      <p class="loc">Parceiro de Minas Gerais</p>
-      <p class="big">R$ 30 mil</p>
-      <p class="bl">em vendas fechadas em 90 dias</p>
-      <dl>
-        <div><dt>Investimento</dt><dd>R$ 1.875</dd></div>
-        <div><dt>Conversão</dt><dd>10%</dd></div>
-        <div><dt>Crescimento</dt><dd>+23%</dd></div>
-        <div><dt>Projeto</dt><dd>90 dias</dd></div>
-      </dl>
-    </article>
-    <article class="case">
-      <span class="nic"><i></i>Buffet infantil</span>
-      <p class="loc">Parceiro de São Paulo</p>
-      <p class="big">R$ 58 mil</p>
-      <p class="bl">em contratos fechados em 90 dias</p>
-      <dl>
-        <div><dt>Investimento</dt><dd>R$ 1.980</dd></div>
-        <div><dt>Conversão</dt><dd>11%</dd></div>
-        <div><dt>Crescimento</dt><dd>+60%</dd></div>
-        <div><dt>Projeto</dt><dd>90 dias</dd></div>
-      </dl>
-    </article>
+</div>
+  <!-- CASES: para editar, troque os números dentro de cada <article class="case">. Para um novo case, copie um <article> inteiro. O carrossel se ajusta sozinho. -->
+  <div class="marquee" id="cmq" aria-label="Resultados de parceiros">
+    <div class="mtrack">
+      <article class="case">
+        <span class="nic"><i></i>Loja de sofás</span>
+        <p class="loc">Parceiro de São Paulo</p>
+        <p class="big">R$ 49 mil</p>
+        <p class="bl">em vendas fechadas em 90 dias</p>
+        <dl>
+          <div class="full"><dt>Total investido em 90 dias</dt><dd>R$ 6.000</dd></div>
+          <div><dt>Conversão</dt><dd>14%</dd></div>
+          <div><dt>Crescimento</dt><dd>+35%</dd></div>
+        </dl>
+      </article>
+      <!-- Loja de moveis (MG): numeros informados pelo Vinicius em 2026-11-09, sem print. -->
+      <article class="case">
+        <span class="nic"><i></i>Loja de móveis</span>
+        <p class="loc">Parceiro de Minas Gerais</p>
+        <p class="big">R$ 30 mil</p>
+        <p class="bl">em vendas fechadas em 90 dias</p>
+        <dl>
+          <div class="full"><dt>Total investido em 90 dias</dt><dd>R$ 7.500</dd></div>
+          <div><dt>Conversão</dt><dd>10%</dd></div>
+          <div><dt>Crescimento</dt><dd>+23%</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <span class="nic"><i></i>Buffet infantil</span>
+        <p class="loc">Parceiro de São Paulo</p>
+        <p class="big">R$ 58 mil</p>
+        <p class="bl">em contratos fechados em 90 dias</p>
+        <dl>
+          <div class="full"><dt>Total investido em 90 dias</dt><dd>R$ 5.400</dd></div>
+          <div><dt>Conversão</dt><dd>11%</dd></div>
+          <div><dt>Crescimento</dt><dd>+60%</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <span class="nic"><i></i>Venda de empilhadeiras</span>
+        <p class="loc">Parceiro do Rio Grande do Sul</p>
+        <p class="big">R$ 920 mil</p>
+        <p class="bl">em vendas fechadas em 90 dias</p>
+        <dl>
+          <div class="full"><dt>Total investido em 90 dias</dt><dd>R$ 60 mil</dd></div>
+          <div><dt>Conversão</dt><dd>10%</dd></div>
+          <div><dt>Crescimento</dt><dd>+25%</dd></div>
+        </dl>
+      </article>
+    </div>
   </div>
+  <div class="wrap">
   <div class="center-t" style="margin-top:40px;text-align:center"><a class="edu-cta" style="margin-top:0" href="#contato"><span class="dot"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Agendar diagnóstico</a></div>
 </div></section>
 
@@ -793,6 +812,16 @@ var DEPOIMENTOS = [];
   }
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
   window.addEventListener('resize',upd);upd();
+})();
+</script>
+<script>
+(function(){var m=document.getElementById('cmq');if(!m)return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var tr=m.querySelector('.mtrack'),cs=[].slice.call(tr.children).filter(function(e){return e.tagName==='ARTICLE'});
+cs.forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');k.setAttribute('inert','');tr.appendChild(k)});
+m.style.setProperty('--mq-dur',(cs.length*12)+'s');m.classList.add('anim');
+var to;function p(){clearTimeout(to);m.classList.add('paused')}function r(){clearTimeout(to);to=setTimeout(function(){m.classList.remove('paused')},1200)}
+m.addEventListener('touchstart',p,{passive:true});m.addEventListener('touchend',r);m.addEventListener('touchcancel',r);
 })();
 </script>
 </body>
